@@ -24,7 +24,7 @@ interface CheckupLandingPageProps {
 }
 
 export default function CheckupLandingPage({
-  checkoutUrl = 'https://checkout.exemplo.com.br',
+  checkoutUrl = 'https://payfast.greenn.com.br/27s9n8q?b_id_1=9ujy5kr&src=251fe2fa6aca41a0a33fd893ea936f29&sck=251fe2fa6aca41a0a33fd893ea936f29&vid=251fe2fa6anca41a0a33fd893ea936f29',
   logoSrc = '/images/logo.png',
 }: CheckupLandingPageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -113,6 +113,8 @@ export default function CheckupLandingPage({
             </a>
             <a
               href={checkoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] text-sm flex items-center gap-2"
             >
               <span>CHECKUP POR R$ 99,00</span>
@@ -146,6 +148,8 @@ export default function CheckupLandingPage({
           <div className="max-w-md mx-auto mb-8">
             <a
               href={checkoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-extrabold text-lg sm:text-xl py-4 sm:py-5 px-6 rounded-2xl flex items-center justify-center gap-3 transition-all transform active:scale-95 shadow-[0_0_35px_rgba(16,185,129,0.35)]"
             >
               <span>QUERO MEU CHECKUP • R$ 99,00</span>
