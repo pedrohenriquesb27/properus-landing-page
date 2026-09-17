@@ -69,20 +69,15 @@ export default function CheckupLandingPage({
       <header className="py-3.5 px-4 sm:px-6 lg:px-8 border-b border-slate-800/80 bg-[#0B0F19]/90 backdrop-blur-md sticky top-0 z-40">
         <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
           
-          {/* Logo Oficial Destaque com Container Limpo */}
+          {/* Logo / Marca - Apenas Nome */}
           <div className="flex items-center shrink-0">
-            <a href="#" className="flex items-center gap-3.5 group">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl bg-white p-2.5 sm:p-3 flex items-center justify-center shadow-inner border border-slate-200/20 shrink-0 group-hover:scale-105 transition-transform">
-                <img src="data:image/png;base64,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" alt="PROSPERUS Emblem" className="w-full h-full object-contain filter drop-shadow-sm" />
-              </div>
-              <div className="flex flex-col text-left justify-center">
-                <span className="font-extrabold text-xl sm:text-2xl md:text-3xl tracking-tight text-white leading-none group-hover:text-emerald-300 transition-colors">
-                  PROSPERUS
-                </span>
-                <span className="text-[9.5px] sm:text-[11px] md:text-[12px] font-extrabold tracking-[0.18em] text-emerald-400 uppercase mt-1 leading-none">
-                  INTELIGÊNCIA FINANCEIRA
-                </span>
-              </div>
+            <a href="#" className="flex flex-col text-left justify-center group py-1">
+              <span className="font-extrabold text-2xl sm:text-3xl tracking-tight text-white leading-none group-hover:text-emerald-400 transition-colors">
+                PROSPERUS
+              </span>
+              <span className="text-[10px] sm:text-[11.5px] font-extrabold tracking-[0.22em] text-emerald-400 uppercase mt-1 leading-none">
+                INTELIGÊNCIA FINANCEIRA
+              </span>
             </a>
           </div>
 
