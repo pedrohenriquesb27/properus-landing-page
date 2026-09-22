@@ -19,7 +19,7 @@ interface CheckupLandingPageProps {
 }
 
 export default function CheckupLandingPage({
-  checkoutUrl = 'https://payfast.greenn.com.br/27s9n8q?b_id_1=9ujy5kr&src=251fe2fa6aca41a0a33fd893ea936f29&sck=251fe2fa6aca41a0a33fd893ea936f29&vid=251fe2fa6anca41a0a33fd893ea936f29',
+  checkoutUrl = 'https://payfast.greenn.com.br/27s9n8q?b_id_1=9ujy5kr&src=251fe2fa6aca41a0a33fd893ea936f29&sck=251fe2fa6aca41a0a33fd893ea936f29&vid=251fe2fa6aca41a0a33fd893ea936f29',
 }: CheckupLandingPageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -317,6 +317,24 @@ export default function CheckupLandingPage({
           </div>
         </div>
       </section>
+
+      {/* Sticky Mobile Bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0B0F19]/95 backdrop-blur-lg border-t border-slate-800 p-3 flex items-center justify-between gap-3 shadow-[0_-10px_25px_rgba(0,0,0,0.5)]">
+        <div>
+          <div className="text-[10px] text-slate-400 uppercase font-semibold">Checkup Financeiro</div>
+          <div className="text-lg font-black text-emerald-400">R$ 99,00</div>
+        </div>
+        <a
+          href={checkoutUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm py-3 px-5 rounded-xl flex items-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+        >
+          <span>SOLICITAR</span>
+          <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+        </a>
+      </div>
+
     </div>
   );
 }
