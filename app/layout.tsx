@@ -47,6 +47,55 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Meta Pixel Code */}
+        {/* Prosperus Custom Pixel Code */}
+        <Script id="prosperus-pixel" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){
+              w[l]=w[l]||[];
+              var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s);
+              j.async=true;
+              j.src='https://www.prosperusif.com.br/api/track?client_id='+encodeURIComponent(i)+'&url='+encodeURIComponent(w.location.href)+'&referrer='+encodeURIComponent(d.referrer);
+              f.parentNode.insertBefore(j,f);
+              try {
+                var p = new URLSearchParams(w.location.search);
+                var payload = {
+                  client_id: i,
+                  url: w.location.href,
+                  referrer: d.referrer,
+                  utm_source: p.get('utm_source'),
+                  utm_medium: p.get('utm_medium'),
+                  utm_campaign: p.get('utm_campaign'),
+                  utm_content: p.get('utm_content'),
+                  vid: p.get('vid'),
+                  src: p.get('src'),
+                  sck: p.get('sck')
+                };
+                if (navigator.sendBeacon) {
+                  navigator.sendBeacon('https://www.prosperusif.com.br/api/track', JSON.stringify(payload));
+                } else {
+                  fetch('https://www.prosperusif.com.br/api/track', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                    keepalive: true
+                  }).catch(function(){});
+                }
+              } catch(e) {}
+            })(window, document, 'script', 'prosperusTrack', 'prosperus_main');
+          `}
+        </Script>
+        {/* Microsoft Clarity Code */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "yme8rmsnp3");
+          `}
+        </Script>
+        {/* End Microsoft Clarity Code */}
       </head>
       <body className="bg-[#0B0F19] text-slate-100 antialiased selection:bg-emerald-500 selection:text-slate-950 min-h-screen">
         {children}
