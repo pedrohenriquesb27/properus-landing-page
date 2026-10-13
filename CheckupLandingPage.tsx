@@ -19,7 +19,7 @@ interface CheckupLandingPageProps {
 }
 
 export default function CheckupLandingPage({
-  checkoutUrl = 'https://payfast.greenn.com.br/27s9n8q?b_id_1=9ujy5kr&src=251fe2fa6aca41a0a33fd893ea936f29&sck=251fe2fa6aca41a0a33fd893ea936f29&vid=251fe2fa6aca41a0a33fd893ea936f29',
+  checkoutUrl = 'https://payfast.greenn.com.br/27s9n8q?b_id_1=9ujy5kr&src=prosperus_principal&sck=prosperus_principal&vid=prosperus_principal',
 }: CheckupLandingPageProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
